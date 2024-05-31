@@ -1,9 +1,10 @@
 import random
-word = ["gypsy", "caramel" "star wars"]
+import asciiImage
+word = ["gypsy", "caramel", "star wars"]
 chosen_word = random.choice(word)
 shown_word = ["_"] *(len(chosen_word))
 same_input = []
-lives = 6
+lives = 7
 while "_" in shown_word:
     print(' '.join(shown_word))
     guessed = input("Guess a letter: \n").lower()
@@ -22,7 +23,8 @@ while "_" in shown_word:
 
             else:
                 lives-=1
-                print(f"You have {lives} left\n")
+
+                print(asciiImage.stages[lives])
                 if lives == 0:
                     print("You Lose!Game Over!")
                     exit()
